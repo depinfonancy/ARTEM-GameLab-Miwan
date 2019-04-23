@@ -1,5 +1,5 @@
 à faire : 
- - Rampes avec prise de vitesse (voir unity effector pour créer champ de force)
+ - Rampes avec prise de vitesse (voir unity effector pour créer champ de force) camille
  - Plateformes (tapis roulants + 'ascenseurs', voir effector aussi) 
  - élements de décor à casser (caisses en bois, placard, etc)
  - miwan sans bras 
