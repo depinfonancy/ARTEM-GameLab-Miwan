@@ -1,7 +1,7 @@
 à faire : 
  - Rampes avec prise de vitesse (voir unity effector pour créer champ de force) camille
  - Plateformes (tapis roulants + 'ascenseurs', voir effector aussi) 
- - élements de décor à casser (caisses en bois, placard, etc)
+ - élements de décor à casser (caisses en bois, placard, etc) camille
  - miwan sans bras 
  - grimper à la corde
  - menu (accueil, pause)
