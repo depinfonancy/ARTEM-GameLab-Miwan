@@ -24,3 +24,4 @@ Notes _ Léo :
  - pour l'instant on peut tout le temps avoir le jetpack, à changer
  - animations manquantes : jetpack éteint, iddle avec et sans bras
  - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
+ - attention au Collider qui se décale entre les différentes animations
