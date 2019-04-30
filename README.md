@@ -21,3 +21,4 @@
 
 Notes _ Léo :
  - il ne faut pas inverser l'image quand on passe de droite à gauche car image non symétrique
+ - pour l'instant on peut tout le temps avoir le jetpack, à changer
