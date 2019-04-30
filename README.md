@@ -4,7 +4,7 @@
  - élements de décor à casser (caisses en bois, placard, etc) camille
  - miwan sans bras 
  - grimper à la corde
- - menu (accueil, pause) khou
+ - menu (accueil, pause) kou
  - commencer à regarder les scripts 
  - lentille et vision infrarouge (avec shader)
  - jetpack : est ce qu'il a une durée d'utilisation limitée ?
