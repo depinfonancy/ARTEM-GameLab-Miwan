@@ -18,3 +18,8 @@
   - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force) grosso modo fait, élements de décor à casser (caisses en bois, placard, etc) 
   - Guillaume : décors et faire évoluer le robot dedans / caméras
   - Anas : 
+
+
+Branche lentille infrarouge: 
+
+-> adapter le tuto trouvé pour un environnement 2D 
