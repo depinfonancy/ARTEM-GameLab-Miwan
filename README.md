@@ -1,6 +1,6 @@
 à faire : 
  - Rampes avec prise de vitesse (voir unity effector pour créer champ de force) camille
- - Plateformes (tapis roulants + 'ascenseurs', voir effector aussi) 
+ - Plateformes (tapis roulants + 'ascenseurs', voir effector aussi) (j'ai commencé à regarder les effectors donc veut bien le faire plus tard si besoin - camille)
  - élements de décor à casser (caisses en bois, placard, etc) camille
  - miwan sans bras 
  - grimper à la corde
@@ -12,8 +12,8 @@
  
  Tâches :
   - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
-  - Kou : 
-  - Noémie :
-  - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force), élements de décor à casser (caisses en bois, placard, etc) 
-  - Guillaume :
-  - Anas :
+  - Kou : menu
+  - Noémie : lentille et vision infrarouge
+  - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force) grosso modo fait, élements de décor à casser (caisses en bois, placard, etc) 
+  - Guillaume : décors et faire évoluer le robot dedans / caméras
+  - Anas : 
