@@ -9,6 +9,7 @@
  - lentille et vision infrarouge (avec shader)
  - jetpack : est ce qu'il a une durée d'utilisation limitée ?
  - musiques et bruitages 
+ - export sur mac?? s'en préoccuper en avance
  
  Tâches :
   - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
