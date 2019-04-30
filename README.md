@@ -17,3 +17,7 @@
   - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force) grosso modo fait, élements de décor à casser (caisses en bois, placard, etc) 
   - Guillaume : décors et faire évoluer le robot dedans / caméras
   - Anas : 
+
+
+Notes _ Léo :
+ - il ne faut pas inverser l'image quand on passe de droite à gauche car image non symétrique
