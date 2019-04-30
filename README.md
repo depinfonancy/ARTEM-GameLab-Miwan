@@ -14,6 +14,6 @@
   - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
   - Kou : 
   - Noémie :
-  - Camille :
+  - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force), élements de décor à casser (caisses en bois, placard, etc) 
   - Guillaume :
   - Anas :
