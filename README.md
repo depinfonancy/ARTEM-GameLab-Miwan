@@ -22,3 +22,5 @@
 Notes _ Léo :
  - il ne faut pas inverser l'image quand on passe de droite à gauche car image non symétrique
  - pour l'instant on peut tout le temps avoir le jetpack, à changer
+ - animations manquantes : jetpack éteint, iddle avec et sans bras
+ - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
