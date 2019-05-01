@@ -196,12 +196,43 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    /*
+    public void CheckIfToCloseToGround()
+    {
+        // Compute raycast starting point and direction, such that the ray
+        // is directed toward the ground and have a length of groundedRaycastDistance outside
+        // the capsule collider of the character
+
+        Vector2 raycastDirection = Vector2.down;
+        Vector2 raycastStart = m_Rigidbody.position + m_Capsule.offset;
+        raycastStart = raycastStart + Vector2.down * (m_Capsule.size.y * 0.5f - m_Capsule.size.x * 0.5f);
+        float raycastDistance = m_Capsule.size.x * 1.5f + groundedRaycastDistance * 1.5f;
+
+        //Debug.DrawLine(raycastStart, raycastStart + raycastDirection * raycastDistance);
+
+        int count = Physics2D.Raycast(raycastStart, raycastDirection, m_ContactFilter, m_HitBuffer, raycastDistance);
+
+        // We can check the ray that will be sent in the scene for debugging
+        Debug.DrawRay(raycastStart, raycastDirection); // * raycastDistance
+
+        jetpackON = !(count > 0);
+        airControl = jetpackON;
+  
+        //m_HitBuffer[0] contains informations on the closest collider
+        //free memory
+        for (int i = 0; i < m_HitBuffer.Length; i++)
+        {
+            m_HitBuffer[i] = new RaycastHit2D();
+        }
+    }
+    */
 
 
-/**/
+
+    /**/
 
 
-	private void Flip ()
+    private void Flip ()
 	{
 		facingRight = !facingRight;
 
