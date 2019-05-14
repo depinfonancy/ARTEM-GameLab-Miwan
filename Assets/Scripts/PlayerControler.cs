@@ -19,6 +19,7 @@ public class PlayerControler : MonoBehaviour
     private bool arms = false;
     private bool hasjetpack = false;
     private bool jetpackON = false;
+    private bool jetpackToCloseToGround = true;
 
 
     private bool jump;    // save jump button status for fixed update
@@ -89,6 +90,15 @@ public class PlayerControler : MonoBehaviour
             jetpackON = Input.GetButtonDown("Jetpack");
             airControl = jetpackON; //on autorise le déplacement en l'air seulement si jetpack allume
         }
+        else
+        {
+            CheckIfToCloseToGround();
+            if (jetpackToCloseToGround && (m_Rigidbody.velocity.y<0))
+            {
+                jetpackON = false;
+                airControl = false;
+            }
+        }
 
 
         if (!arms)
@@ -109,7 +119,6 @@ public class PlayerControler : MonoBehaviour
 
         // check whether we are grounded or not, and update player status accordingly
         CheckIfGrounded();
-
 
 
         // pass movement parameters to function that manage actual movement
@@ -165,6 +174,8 @@ public class PlayerControler : MonoBehaviour
             {
                 m_grounded = false;
                 m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x / 1.5f, 10 * jetpackPropulsion);
+                jetpackToCloseToGround = false;
+
             }
         }
     }
@@ -178,14 +189,14 @@ public class PlayerControler : MonoBehaviour
         Vector2 raycastDirection = Vector2.down;
         Vector2 raycastStart = m_Rigidbody.position + m_Capsule.offset;
         raycastStart = raycastStart + Vector2.down * (m_Capsule.size.y * 0.5f - m_Capsule.size.x * 0.5f);
-        float raycastDistance = m_Capsule.size.x * 0.5f + groundedRaycastDistance * 1.0f;
+        float raycastDistance = m_Capsule.size.x * 0.3f + groundedRaycastDistance * 0.25f;
 
         //Debug.DrawLine(raycastStart, raycastStart + raycastDirection * raycastDistance);
 
         int count = Physics2D.Raycast(raycastStart, raycastDirection, m_ContactFilter, m_HitBuffer, raycastDistance);
 
         // We can check the ray that will be sent in the scene for debugging
-        Debug.DrawRay (raycastStart, raycastDirection); // * raycastDistance
+        Debug.DrawRay (raycastStart, raycastDirection*raycastDistance); // * raycastDistance
 
         m_grounded = (count > 0);
         //m_HitBuffer[0] contains informations on the closest collider
@@ -196,7 +207,7 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    /*
+
     public void CheckIfToCloseToGround()
     {
         // Compute raycast starting point and direction, such that the ray
@@ -206,18 +217,21 @@ public class PlayerControler : MonoBehaviour
         Vector2 raycastDirection = Vector2.down;
         Vector2 raycastStart = m_Rigidbody.position + m_Capsule.offset;
         raycastStart = raycastStart + Vector2.down * (m_Capsule.size.y * 0.5f - m_Capsule.size.x * 0.5f);
-        float raycastDistance = m_Capsule.size.x * 1.5f + groundedRaycastDistance * 1.5f;
+        float raycastDistance = m_Capsule.size.x * 0.4f + groundedRaycastDistance * 0.4f;
 
         //Debug.DrawLine(raycastStart, raycastStart + raycastDirection * raycastDistance);
 
         int count = Physics2D.Raycast(raycastStart, raycastDirection, m_ContactFilter, m_HitBuffer, raycastDistance);
 
         // We can check the ray that will be sent in the scene for debugging
-        Debug.DrawRay(raycastStart, raycastDirection); // * raycastDistance
+        Debug.DrawRay(raycastStart, raycastDirection * 1.5f); // * raycastDistance
 
+        /*
         jetpackON = !(count > 0);
         airControl = jetpackON;
-  
+        */
+        jetpackToCloseToGround = (count > 0);
+
         //m_HitBuffer[0] contains informations on the closest collider
         //free memory
         for (int i = 0; i < m_HitBuffer.Length; i++)
@@ -225,7 +239,7 @@ public class PlayerControler : MonoBehaviour
             m_HitBuffer[i] = new RaycastHit2D();
         }
     }
-    */
+    
 
 
 
