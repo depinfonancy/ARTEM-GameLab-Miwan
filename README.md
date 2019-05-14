@@ -9,6 +9,7 @@
  - lentille et vision infrarouge (avec shader)
  - jetpack : est ce qu'il a une durée d'utilisation limitée ?
  - musiques et bruitages 
+ - assemblage des décors (en reprenant la numérotation du drive): 1-2-3 fait 
 
  Tâches :
   - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
