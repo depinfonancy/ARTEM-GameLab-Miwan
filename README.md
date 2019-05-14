@@ -22,4 +22,4 @@
 
 Branche lentille infrarouge: 
 
--> adapter le tuto trouvé pour un environnement 2D 
+- l'effet vignette ne fonctionne pas pour l'instant, -> https://www.youtube.com/watch?v=a0OQvWAPeuo&t=774s à regarder 
