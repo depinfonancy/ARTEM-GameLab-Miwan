@@ -148,15 +148,6 @@ public class PlayerControler : MonoBehaviour
         {
             if (airControl)
             {
-                /*if (jetpackON)
-                {
-                    m_Rigidbody.velocity = new Vector2(move_h * maxSpeed_h, jetpackPropulsion + move_v * maxSpeed_v);
-                }
-                else    
-                {
-                    m_Rigidbody.velocity = new Vector2(move_h * maxSpeed_h, move_v * maxSpeed_v);
-                }
-                */
                 m_Rigidbody.velocity = new Vector2(move_h * maxSpeed_h, move_v * maxSpeed_v);
             }
             else
@@ -226,10 +217,6 @@ public class PlayerControler : MonoBehaviour
         // We can check the ray that will be sent in the scene for debugging
         Debug.DrawRay(raycastStart, raycastDirection * 1.5f); // * raycastDistance
 
-        /*
-        jetpackON = !(count > 0);
-        airControl = jetpackON;
-        */
         jetpackToCloseToGround = (count > 0);
 
         //m_HitBuffer[0] contains informations on the closest collider
