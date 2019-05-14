@@ -9,7 +9,7 @@
  - lentille et vision infrarouge (avec shader)
  - jetpack : est ce qu'il a une durée d'utilisation limitée ?
  - musiques et bruitages 
- 
+
  Tâches :
   - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
   - Kou : menu
@@ -25,3 +25,4 @@ Notes _ Léo :
  - animations manquantes : jetpack éteint, iddle avec et sans bras
  - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
  - attention au Collider qui se décale entre les différentes animations
+
