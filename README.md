@@ -27,3 +27,5 @@ Notes _ Léo :
  - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
  - attention au Collider qui se décale entre les différentes animations
 
+Notes Noémie: 
+ - https://docs.unity3d.com/Packages/com.unity.postprocessing@2.1/manual/Quick-start.html (pack postprocessing) 
