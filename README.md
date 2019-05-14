@@ -22,4 +22,4 @@
 
 Branche lentille infrarouge: 
 
-- l'effet vignette ne fonctionne pas pour l'instant, -> https://www.youtube.com/watch?v=a0OQvWAPeuo&t=774s à regarder 
+- l'effet vignette ne fonctionne pas, en revanche en testant l'effet color grading et en travaillant sur les couleurs, on obtient un effet vert intéressant à travailler pour avoir l'effet "vision nocturne" escompté
