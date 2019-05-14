@@ -9,8 +9,12 @@
  - lentille et vision infrarouge (avec shader)
  - jetpack : est ce qu'il a une durée d'utilisation limitée ?
  - musiques et bruitages 
+<<<<<<< HEAD
  - assemblage des décors (en reprenant la numérotation du drive): 1-2-3 fait 
 
+=======
+ 
+>>>>>>> test_animator
  Tâches :
   - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
   - Kou : menu
@@ -27,5 +31,12 @@ Notes _ Léo :
  - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
  - attention au Collider qui se décale entre les différentes animations
 
+<<<<<<< HEAD
 Notes Noémie: 
  - https://docs.unity3d.com/Packages/com.unity.postprocessing@2.1/manual/Quick-start.html (pack postprocessing) 
+=======
+Touches de déplacement :
+- direction avec les fleches
+- sortir les bras avec "a" (on ne peut plus les ranger)
+- avec les bras sortis, on peut utiliser le jetpack avec la barre d'espace (on ne peut plus le ranger)
+>>>>>>> test_animator
