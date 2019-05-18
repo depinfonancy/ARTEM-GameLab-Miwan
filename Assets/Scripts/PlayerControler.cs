@@ -27,7 +27,7 @@ public class PlayerControler : MonoBehaviour
 
     // store Component of the Player GameObject that need to be used in the script
     private SpriteRenderer m_SpriteRenderer;
-	private Rigidbody2D m_Rigidbody;
+	public Rigidbody2D m_Rigidbody;
 	private Animator m_Animator;
 /*NEW*/
     private CapsuleCollider2D m_Capsule;
