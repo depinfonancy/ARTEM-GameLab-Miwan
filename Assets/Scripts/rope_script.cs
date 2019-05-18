@@ -30,6 +30,9 @@ public class rope_script : MonoBehaviour
         {
             canClimb = true;
             Debug.Log("on grimpe \n");
+
+            // display climbing animation
+            playerObject.GetComponent<Animation>().Play("AnimGrabbing");
         }
 
     }
@@ -44,6 +47,9 @@ public class rope_script : MonoBehaviour
         {
             canClimb = false;
             Debug.Log("stop climbing. \n");
+
+            // stop climbing animation
+            playerObject.GetComponent<Animation>().Stop("AnimGrabbing");
         }
         
     }
