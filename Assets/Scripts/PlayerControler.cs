@@ -6,7 +6,8 @@ public class PlayerControler : MonoBehaviour
 {
 	public float maxSpeed_h = 9.0f;	// max horizontal speed
     public float maxSpeed_v = 10.0f;
-/*NEW*/
+
+    /*NEW*/
     public float jumpSpeed = 18.0f;  // jump speed impulse
                                      
     public float jetpackPropulsion = 5.0f;
@@ -16,8 +17,8 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
     private bool m_grounded;    // true if player is considered grounded
 
-    private bool arms = false;
-    private bool hasjetpack = false;
+    public bool arms = false;
+    public bool has_jetpack = false;
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
 
@@ -32,14 +33,15 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
     private CapsuleCollider2D m_Capsule;
     public Transform m_ShootStartPoint;
-/**/
+/**/ 
 
     // HashId to manage the animation (faster than sting based approach)
-	protected readonly int m_HashSpeedPara = Animator.StringToHash ("speed");
+	protected readonly int m_HashSpeedPara = Animator.StringToHash("maxSpeed_h");
 /*NEW*/
-    protected readonly int m_HashVerticalSpeedPara = Animator.StringToHash("vSpeed");
+    protected readonly int m_HashVerticalSpeedPara = Animator.StringToHash("maxSpeed_v");
     protected readonly int m_HashGroundedPara = Animator.StringToHash("grounded");
     protected readonly int m_HashArmsPara = Animator.StringToHash("arms");
+    protected readonly int m_HashHasJetpackPara = Animator.StringToHash("has_jetpack");
     protected readonly int m_HashJetpackONPara = Animator.StringToHash("jetpackON");
 
     // Jump related 
@@ -65,6 +67,7 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
         m_Capsule = GetComponent<CapsuleCollider2D>();
 
+
         // define behavior for raycasting
 //        m_ContactFilter.layerMask = groundLayers;
         m_ContactFilter.layerMask = LayerMask.GetMask("Ground");
@@ -85,18 +88,24 @@ public class PlayerControler : MonoBehaviour
             jump = Input.GetButtonDown("Jump");
         }
 
-        if (!jetpackON)
+        if (has_jetpack && arms)
+            //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
         {
-            jetpackON = Input.GetButtonDown("Jetpack");
-            airControl = jetpackON; //on autorise le déplacement en l'air seulement si jetpack allume
-        }
-        else
-        {
-            CheckIfToCloseToGround();
-            if (jetpackToCloseToGround && (m_Rigidbody.velocity.y<0))
+            if (!jetpackON)
+                //si jetpack eteint on regarde si le joueur l'utilise
             {
-                jetpackON = false;
-                airControl = false;
+                jetpackON = Input.GetButtonDown("Jetpack");
+                airControl = jetpackON; //on autorise le déplacement en l'air seulement si jetpack allume
+            }
+            else
+                //sinon (il est allume) on regarde si le robot est trop pres du sol
+            {
+                CheckIfToCloseToGround();
+                if (jetpackToCloseToGround && (m_Rigidbody.velocity.y < 0))
+                {
+                    jetpackON = false;
+                    airControl = false;
+                }
             }
         }
 
@@ -128,6 +137,7 @@ public class PlayerControler : MonoBehaviour
         // update the state of the animation state machine
         m_Animator.SetBool(m_HashGroundedPara, m_grounded);
         m_Animator.SetBool(m_HashArmsPara, arms);
+        m_Animator.SetBool(m_HashHasJetpackPara, has_jetpack);
         m_Animator.SetBool(m_HashJetpackONPara, jetpackON);
         m_Animator.SetFloat(m_HashSpeedPara, Mathf.Abs(h));
         // we handle both fall and jump animation based on the same animation
@@ -159,6 +169,7 @@ public class PlayerControler : MonoBehaviour
             if ((move_h > 0 && !facingRight) || (move_h < 0 && facingRight))
             {
                 Flip();
+                Debug.Log("coucou");
             }
 
             if (m_grounded && jetpackON)

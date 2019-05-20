@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
  
-public class rope_script : MonoBehaviour
+public class RopeScript : MonoBehaviour
 {
     private bool canClimb = false;
 
@@ -20,7 +19,7 @@ public class rope_script : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision coll)
+    public void OnCollisionEnter(Collision coll)
 
         // enable the player to climb when there is a collision between rope and player
     {
