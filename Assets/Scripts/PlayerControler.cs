@@ -16,10 +16,10 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
     private bool m_grounded;    // true if player is considered grounded
 
-    private bool arms = false;
+    private bool arms = true;
     private bool hasjetpack = false;
     private bool jetpackON = false;
-    private bool jetpackToCloseToGround = true;
+    private bool jetpackToCloseToGround = false;
 
 
     private bool jump;    // save jump button status for fixed update

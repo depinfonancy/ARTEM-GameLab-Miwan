@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - ExplosionFX
+  - ground
+  - Obstacle
+  - Bullet
+  - HealthBar
+  - BombPickup
   layers:
   - Default
   - TransparentFX
@@ -14,7 +21,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Postprocessing
   - 
   - 
   - 
