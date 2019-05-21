@@ -44,7 +44,6 @@ public class JetpackScript : MonoBehaviour
 
     // manage player movement when it is in contact with the rope
     {
-        Debug.Log("");
     }
 
 

@@ -12,6 +12,8 @@ public class RopeScript : MonoBehaviour
     // define variable but can not assign them yet because Unity wont accept it
     public GameObject playerObject;
     private Rigidbody2D p_rigidbody;
+    private Animator anim;
+    private bool arms;
 
 
     void Start()
@@ -19,36 +21,38 @@ public class RopeScript : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter(Collision coll)
+    public void OnCollisionEnter2D(Collision2D coll)
 
         // enable the player to climb when there is a collision between rope and player
     {
         playerObject = GameObject.Find("Player");
+        anim = playerObject.GetComponent<Animator>();
 
-        if (coll.gameObject == playerObject)
+        if (coll.gameObject == playerObject && anim.GetBool("arms"))
         {
             canClimb = true;
             Debug.Log("on grimpe \n");
 
             // display climbing animation
-            playerObject.GetComponent<Animation>().Play("AnimGrabbing");
+            anim.SetBool("climbing", true);
         }
 
     }
 
-    void OnCollisionExit(Collision coll2)
+    void OnCollisionExit2D(Collision2D coll2)
 
         // disable the player to climb when the contact is over
     {
         playerObject = GameObject.Find("Player");
+        anim = playerObject.GetComponent<Animator>();
 
-        if (coll2.gameObject == playerObject)
+        if (coll2.gameObject == playerObject )
         {
             canClimb = false;
             Debug.Log("stop climbing. \n");
 
             // stop climbing animation
-            playerObject.GetComponent<Animation>().Stop("AnimGrabbing");
+            anim.SetBool("climbing", false);
         }
         
     }
