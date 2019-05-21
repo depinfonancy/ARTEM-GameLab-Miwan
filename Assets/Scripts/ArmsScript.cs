@@ -13,7 +13,7 @@ public class ArmsScript : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision coll)
+    void OnCollisionEnter2D(Collision2D coll)
 
     // enable the player to climb when there is a collision between rope and player
     {
@@ -22,29 +22,20 @@ public class ArmsScript : MonoBehaviour
         if (coll.gameObject == playerObject)
         {
             playerObject.GetComponent<PlayerControler>().arms = true;
-            Debug.Log("bouuuum");
         }
 
     }
 
-    void OnCollisionExit(Collision coll2)
+    void OnCollisionExit2D(Collision2D coll2)
 
     // disable the player to climb when the contact is over
     {
-        playerObject = GameObject.Find("Player");
-
-        if (coll2.gameObject == playerObject)
-        {
-            Debug.Log("stop boum");
-        }
-
     }
 
     void Update()
 
     // manage player movement when it is in contact with the rope
     {
-        Debug.Log("");
     }
 
 

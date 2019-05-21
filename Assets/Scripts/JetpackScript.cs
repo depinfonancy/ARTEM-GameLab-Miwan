@@ -13,7 +13,7 @@ public class JetpackScript : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision coll)
+    void OnCollisionEnter2D(Collision2D coll)
 
     // enable the player to climb when there is a collision between rope and player
     {
@@ -27,7 +27,7 @@ public class JetpackScript : MonoBehaviour
 
     }
 
-    void OnCollisionExit(Collision coll2)
+    void OnCollisionExit2D(Collision2D coll2)
 
     // disable the player to climb when the contact is over
     {
@@ -42,7 +42,7 @@ public class JetpackScript : MonoBehaviour
 
     void Update()
 
-    // manage player movement when it is in contact with the rope
+    // manage player movement when it is in contact with the jetpack
     {
     }
 
