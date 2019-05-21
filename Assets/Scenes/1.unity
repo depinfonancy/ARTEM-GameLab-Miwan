@@ -312,7 +312,7 @@ Transform:
   - {fileID: 28449434}
   - {fileID: 465157077}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276981672
 GameObject:
@@ -323,7 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 276981673}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tapis Gauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ Transform:
   - {fileID: 590375156}
   - {fileID: 1123101910}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &421050729
 GameObject:
@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421050730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tapis Droit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,14 +371,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421050729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.116172165, y: 1.7920164, z: -2.4921875}
+  m_LocalPosition: {x: -0.116172165, y: 1.22, z: -2.4921875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 772455475}
   - {fileID: 843100737}
   - {fileID: 2032925218}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &424275923
 GameObject:
@@ -414,7 +414,7 @@ Transform:
   - {fileID: 550861185}
   - {fileID: 1015374141}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &465157076
 PrefabInstance:
@@ -561,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 6741775041913306446, guid: e77b278e97d12344d97c43716f5ac0b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6741775041913306446, guid: e77b278e97d12344d97c43716f5ac0b2,
         type: 3}
@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590375156}
   - component: {fileID: 590375157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tapis gauche-bas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +815,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772455474
 GameObject:
@@ -827,7 +827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772455475}
   - component: {fileID: 772455476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tapis droit-tapis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 843100737}
   - component: {fileID: 843100738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tapis droit-bas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123101910}
   - component: {fileID: 1123101911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tapis gauche-rebord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1183,7 +1183,7 @@ PrefabInstance:
     - target: {fileID: 5646095251796931843, guid: cafc40c70559199428f7413186c293c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5646095251796931843, guid: cafc40c70559199428f7413186c293c3,
         type: 3}
@@ -1336,7 +1336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1316679673
 GameObject:
@@ -1575,85 +1575,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1914728541
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3678423304421214775, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_Name
-      value: box
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410892648574594962, guid: 9091b9053cc0cb14897fac9179bb6572,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9091b9053cc0cb14897fac9179bb6572, type: 3}
 --- !u!1 &2032925217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1586,7 @@ GameObject:
   - component: {fileID: 2032925218}
   - component: {fileID: 2032925220}
   - component: {fileID: 2032925219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tapis droit-rebord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1760,6 +1681,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2099741335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2050464112122182997, guid: e77b278e97d12344d97c43716f5ac0b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 467971528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2099741338
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099741335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 35.079998, y: 7.2499995}
+    newSize: {x: 35.079998, y: 7.2499995}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 35.079998, y: 7.2499995}
+  m_EdgeRadius: 0
 --- !u!1 &2124907894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,7 +1723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2124907895}
   - component: {fileID: 2124907896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tapis gauche-tapis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
