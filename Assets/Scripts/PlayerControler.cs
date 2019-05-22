@@ -17,7 +17,7 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
     private bool m_grounded;    // true if player is considered grounded
 
-    public bool arms = false;
+    public bool arms = true;
     public bool has_jetpack = false;
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
