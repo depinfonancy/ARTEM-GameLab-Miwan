@@ -297,6 +297,8 @@ public static class SpriteExploder {
         Rigidbody2D rigidbody = piece.AddComponent<Rigidbody2D>();
         rigidbody.velocity = origVelocity;
 
+        FragmentScript script = piece.AddComponent<FragmentScript>();
+
 
 
         return piece;
