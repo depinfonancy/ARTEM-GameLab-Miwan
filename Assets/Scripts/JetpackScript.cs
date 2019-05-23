@@ -8,8 +8,8 @@ public class JetpackScript : MonoBehaviour
     // define variable but can not assign them yet because Unity wont accept it
     public GameObject playerObject;
     private Rigidbody2D p_rigidbody;
-    //public GUIText winText;
-    public string stringToEdit;
+
+    public GameObject message;
 
 
     void Start()
@@ -19,7 +19,6 @@ public class JetpackScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
 
-    // enable the player to climb when there is a collision between rope and player
     {
         playerObject = GameObject.Find("Player");
 
@@ -33,36 +32,25 @@ public class JetpackScript : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D coll2)
 
-    // disable the player to climb when the contact is over
+    // 2 seconds after the end of the collision, the jetpack sprite disappears
     {
         playerObject = GameObject.Find("Player");
-        stringToEdit = "Hello World";
 
 
-    if (coll2.gameObject == playerObject)
+        if (coll2.gameObject == playerObject)
     {
-        StartCoroutine(GreenYellowRed());
-    }
+            //start co-routine in order to wait 2 seconds and desactivate the sprite
+            StartCoroutine(GreenYellowRed());
+        }
 }
 
     
 
     IEnumerator GreenYellowRed()
+        // why this name ? I had no inspirations ... sorry for that
     {
         yield return new WaitForSeconds(2.0f);
-        //winText.text = " NEW JETPACK !!! USE SPACEBAR TO USE IT";
         this.gameObject.SetActive(false);
-        void OnGUI()
-        {
-            stringToEdit = GUI.TextField(new Rect(10, 10, 200, 20), stringToEdit, 25);
-        }
-
-        OnGUI();
-
-
-
-
-
     }
 
 

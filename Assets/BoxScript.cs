@@ -6,6 +6,7 @@ public class BoxScript : MonoBehaviour
 {
     public GameObject Jetpack;
     public GameObject playerObject;
+    public GameObject message;
     private Animator anim;
     public Rigidbody2D boxRigidbody;
 
@@ -13,8 +14,14 @@ public class BoxScript : MonoBehaviour
     void Start()
     {
         boxRigidbody = GetComponent<Rigidbody2D>();
+
+        //desactivate jetpack sprite
         Jetpack = GameObject.Find("JetPack");
         Jetpack.gameObject.SetActive(false);
+
+        //desactivate message sprite
+        message = GameObject.Find("MessageJetpack");
+        message.gameObject.SetActive(false);
     }
 
 
@@ -25,18 +32,25 @@ public class BoxScript : MonoBehaviour
         playerObject = GameObject.Find("Player");
         anim = playerObject.GetComponent<Animator>();
 
+        //if collision with the robot
         if (coll.gameObject == playerObject && anim.GetBool("arms"))
-        {
-            boxRigidbody.velocity = new Vector2(100f, 100f);
+        {   
+            //activate jetpack sprite
             Jetpack.gameObject.SetActive(true);
 
+            //activate message of explanations sprite
+            message.gameObject.SetActive(true);
+
+            //desactivate box sprite
             this.gameObject.SetActive(false);
+
         }
 
     }
 
-        // Update is called once per frame
-        void Update()
+
+    // Update is called once per frame
+    void Update()
     {
         
     }
