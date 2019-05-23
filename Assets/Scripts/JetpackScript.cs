@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI; 
 using UnityEngine;
 
 public class JetpackScript : MonoBehaviour
@@ -8,6 +9,9 @@ public class JetpackScript : MonoBehaviour
     public GameObject playerObject;
     private Rigidbody2D p_rigidbody;
 
+    public GameObject message;
+
+
     void Start()
     {
 
@@ -15,30 +19,40 @@ public class JetpackScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
 
-    // enable the player to climb when there is a collision between rope and player
     {
         playerObject = GameObject.Find("Player");
+
 
         if (coll.gameObject == playerObject)
         {
             playerObject.GetComponent<PlayerControler>().has_jetpack = true;
-            Debug.Log("bouuuum");
         }
 
     }
 
     void OnCollisionExit2D(Collision2D coll2)
 
-    // disable the player to climb when the contact is over
+    // 2 seconds after the end of the collision, the jetpack sprite disappears
     {
         playerObject = GameObject.Find("Player");
 
-        if (coll2.gameObject == playerObject)
-        {
-            Debug.Log("stop boum");
-        }
 
+        if (coll2.gameObject == playerObject)
+    {
+            //start co-routine in order to wait 2 seconds and desactivate the sprite
+            StartCoroutine(GreenYellowRed());
+        }
+}
+
+    
+
+    IEnumerator GreenYellowRed()
+        // why this name ? I had no inspirations ... sorry for that
+    {
+        yield return new WaitForSeconds(2.0f);
+        this.gameObject.SetActive(false);
     }
+
 
     void Update()
 
