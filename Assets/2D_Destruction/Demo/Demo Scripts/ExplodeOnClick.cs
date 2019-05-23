@@ -16,10 +16,11 @@ public class ExplodeOnClick : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (m_Rigidbody.velocity[0] > 0.1) { 
-        _explodable.explode();
-        //ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
-        //ef.doExplosion(transform.position);
+        if (m_Rigidbody.velocity[0] > 0.5) {
+            Debug.Log(m_Rigidbody.velocity[0].ToString());
+            _explodable.explode();
+            //ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
+            //ef.doExplosion(transform.position);
         }
     }
 
