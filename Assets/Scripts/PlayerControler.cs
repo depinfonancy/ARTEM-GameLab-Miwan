@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControler : MonoBehaviour
 {
 	public float maxSpeed_h = 9.0f;	// max horizontal speed
     public float maxSpeed_v = 10.0f;
-
-    /*NEW*/
-    public float jumpSpeed = 18.0f;  // jump speed impulse
                                      
     public float jetpackPropulsion = 5.0f;
 
@@ -17,14 +15,16 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
     private bool m_grounded;    // true if player is considered grounded
 
-    public bool arms = false;
-    public bool has_jetpack = false;
+    /* Global parameters */
+
+    //defined in Awake procedure
+    public bool arms;
+    public bool has_jetpack;
+    //default
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
 
 
-    private bool jump;    // save jump button status for fixed update
-/**/
 
     // store Component of the Player GameObject that need to be used in the script
     private SpriteRenderer m_SpriteRenderer;
@@ -33,20 +33,18 @@ public class PlayerControler : MonoBehaviour
 /*NEW*/
     private CapsuleCollider2D m_Capsule;
     public Transform m_ShootStartPoint;
-/**/ 
 
     // HashId to manage the animation (faster than sting based approach)
 	protected readonly int m_HashSpeedPara = Animator.StringToHash("maxSpeed_h");
-/*NEW*/
     protected readonly int m_HashVerticalSpeedPara = Animator.StringToHash("maxSpeed_v");
     protected readonly int m_HashGroundedPara = Animator.StringToHash("grounded");
     protected readonly int m_HashArmsPara = Animator.StringToHash("arms");
     protected readonly int m_HashHasJetpackPara = Animator.StringToHash("has_jetpack");
     protected readonly int m_HashJetpackONPara = Animator.StringToHash("jetpackON");
 
-    // Jump related 
+    // air related 
 
-    protected bool airControl = false;    // whether control is allowed during jump phase
+    protected bool airControl = false;    // whether control is allowed during in-air phase
     public LayerMask groundLayers;    // layer used to test for the ground, should be defined through the inspector
 
     // Contacts (we do not want to re-affects memory at every frame)
@@ -76,18 +74,31 @@ public class PlayerControler : MonoBehaviour
         Physics2D.queriesStartInColliders = false; // do not take into account collider within which we are starting the raycast
                                                    /**/
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-	}
+        Scene currentScene = SceneManager.GetActiveScene();
+
+
+        //load scene parameter
+        string sceneName = currentScene.name;
+        arms = true;
+        if (sceneName == "1" || sceneName == "2+3")
+        {
+            arms = false;
+        }
+
+        has_jetpack = true;
+        if (sceneName == "1" || sceneName =="2+3" || sceneName=="4" || sceneName=="6" || sceneName == "7" || sceneName == "8" ||
+            sceneName=="9" || sceneName == "10")
+        {
+            has_jetpack = false;
+        }
+
+
+
+    }
     	
 	// Update is called once per frame
 	void Update ()
 	{
-/*NEW*/        
-        if (!jump)
-        {
-            // Read the jump input in Update so button presses aren't missed.
-            jump = Input.GetButtonDown("Jump");
-        }
-
         if (has_jetpack && arms)
             //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
         {
@@ -131,8 +142,7 @@ public class PlayerControler : MonoBehaviour
 
 
         // pass movement parameters to function that manage actual movement
-        Move(h, v, jump);
-        jump = false;
+        Move(h, v);
 
         // update the state of the animation state machine
         m_Animator.SetBool(m_HashGroundedPara, m_grounded);
@@ -140,7 +150,6 @@ public class PlayerControler : MonoBehaviour
         m_Animator.SetBool(m_HashHasJetpackPara, has_jetpack);
         m_Animator.SetBool(m_HashJetpackONPara, jetpackON);
         m_Animator.SetFloat(m_HashSpeedPara, Mathf.Abs(h));
-        // we handle both fall and jump animation based on the same animation
         // that is parametrized by the vertical speed (see blend tree in Player Animator)
         m_Animator.SetFloat(m_HashVerticalSpeedPara, m_Rigidbody.velocity.y);
 
@@ -152,7 +161,7 @@ public class PlayerControler : MonoBehaviour
     /*************************/ 
 
 /*NEW*/
-    public void Move(float move_h, float move_v, bool jump)
+    public void Move(float move_h, float move_v)
     {
         if (m_grounded || airControl)
         {
@@ -169,7 +178,6 @@ public class PlayerControler : MonoBehaviour
             if ((move_h > 0 && !facingRight) || (move_h < 0 && facingRight))
             {
                 Flip();
-                Debug.Log("coucou");
             }
 
             if (m_grounded && jetpackON)
