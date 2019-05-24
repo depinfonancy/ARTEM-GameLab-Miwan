@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 6871293500246039112}
   - component: {fileID: 4129016677427409633}
   - component: {fileID: 3100773574329149904}
+  - component: {fileID: 8100065085194797335}
   m_Layer: 0
   m_Name: PenteNormale
   m_TagString: Untagged
@@ -354,6 +355,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.143999, y: 1.32}
   m_EdgeRadius: 0
+--- !u!252 &8100065085194797335
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567638646485620971}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Speed: 11.41
+  m_SpeedVariation: 0
+  m_ForceScale: 1
+  m_UseContactForce: 0
+  m_UseFriction: 1
+  m_UseBounce: 1
 --- !u!1 &3972217657962438609
 GameObject:
   m_ObjectHideFlags: 0

@@ -186,7 +186,7 @@ InputManager:
     descriptiveName: Juste pour tester les bras pour le moment
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: a
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
