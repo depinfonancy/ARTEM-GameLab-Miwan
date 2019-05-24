@@ -22,6 +22,8 @@ public class PlayerControler : MonoBehaviour
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
     protected Joystick joystick;
+    protected buttonX bouttonX;
+    protected buttonCarre bouttonCarre;
 
 
     private bool jump;    // save jump button status for fixed update
@@ -67,12 +69,15 @@ public class PlayerControler : MonoBehaviour
 		m_Rigidbody = GetComponent<Rigidbody2D> ();
 /*NEW*/
         m_Capsule = GetComponent<CapsuleCollider2D>();
+
+        bouttonX = FindObjectOfType<buttonX>();
+        bouttonCarre = FindObjectOfType<buttonCarre>();
+
+
         joystick = FindObjectOfType<Joystick>();
 
-
-
         // define behavior for raycasting
-//        m_ContactFilter.layerMask = groundLayers;
+        //        m_ContactFilter.layerMask = groundLayers;
         m_ContactFilter.layerMask = LayerMask.GetMask("Ground");
         m_ContactFilter.useLayerMask = true;
         m_ContactFilter.useTriggers = false;
@@ -89,8 +94,8 @@ public class PlayerControler : MonoBehaviour
         {
             // Read the jump input in Update so button presses aren't missed.
             jump = Input.GetButtonDown("Jump");
-        }
 
+        }
         if (has_jetpack && arms)
             //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
         {
@@ -115,7 +120,8 @@ public class PlayerControler : MonoBehaviour
 
         if (!arms)
         {
-            arms = Input.GetButtonDown("Arms");
+
+            arms = Input.GetButtonDown("Arms") || bouttonCarre.Pressed;
         }
 /**/
 	}
@@ -126,8 +132,13 @@ public class PlayerControler : MonoBehaviour
 	{
 /*NEW*/
         // read continous inputs to obtain smooth motions
-        float h = joystick.Horizontal;
-        float v = joystick.Vertical;
+        float h = Input.GetAxis("Horizontal") + joystick.Horizontal;
+        float v = Input.GetAxis("Vertical") + joystick.Vertical;
+
+
+        // read continous inputs to obtain smooth motions from joysticks
+        //float h = joystick.Horizontal;
+        //float v = joystick.Vertical;
 
         // check whether we are grounded or not, and update player status accordingly
         CheckIfGrounded();
