@@ -7,7 +7,7 @@ public class RopeScript : MonoBehaviour
     private bool canClimb = false;
 
     //climbing speed of the player
-    private float climbingSpeed = 3.0f;
+    private float climbingSpeed = 5.0f;
 
     // define variable but can not assign them yet because Unity wont accept it
     public GameObject playerObject;
