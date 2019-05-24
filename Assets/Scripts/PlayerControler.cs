@@ -21,6 +21,7 @@ public class PlayerControler : MonoBehaviour
     public bool has_jetpack = false;
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
+    protected Joystick joystick;
 
 
     private bool jump;    // save jump button status for fixed update
@@ -66,6 +67,8 @@ public class PlayerControler : MonoBehaviour
 		m_Rigidbody = GetComponent<Rigidbody2D> ();
 /*NEW*/
         m_Capsule = GetComponent<CapsuleCollider2D>();
+        joystick = FindObjectOfType<Joystick>();
+
 
 
         // define behavior for raycasting
@@ -123,8 +126,8 @@ public class PlayerControler : MonoBehaviour
 	{
 /*NEW*/
         // read continous inputs to obtain smooth motions
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = joystick.Horizontal;
+        float v = joystick.Vertical;
 
         // check whether we are grounded or not, and update player status accordingly
         CheckIfGrounded();
