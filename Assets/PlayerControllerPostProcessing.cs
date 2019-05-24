@@ -1,20 +1,20 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControlerModifScene9 : MonoBehaviour
-{
-	public float maxSpeed_h = 9.0f;	// max horizontal speed
+public class PlayerControllerPostProcessing : MonoBehaviour
+{ 
+    public float maxSpeed_h = 9.0f;	// max horizontal speed
     public float maxSpeed_v = 10.0f;
 
     /*NEW*/
     public float jumpSpeed = 18.0f;  // jump speed impulse
-                                     
+
     public float jetpackPropulsion = 5.0f;
 
     // Current state of the player
-	private bool facingRight = true;	// facing direction of the player
-/*NEW*/
+    private bool facingRight = true;    // facing direction of the player
+                                        /*NEW*/
     private bool m_grounded;    // true if player is considered grounded
 
     public bool arms = true;
@@ -22,24 +22,24 @@ public class PlayerControlerModifScene9 : MonoBehaviour
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
     public bool has_lens = false;
-    private bool lensON = false; 
+    private bool lensON = false;
 
 
     private bool jump;    // save jump button status for fixed update
-/**/
+                          /**/
 
     // store Component of the Player GameObject that need to be used in the script
     private SpriteRenderer m_SpriteRenderer;
-	public Rigidbody2D m_Rigidbody;
-	private Animator m_Animator;
-/*NEW*/
+    public Rigidbody2D m_Rigidbody;
+    private Animator m_Animator;
+    /*NEW*/
     private CapsuleCollider2D m_Capsule;
     public Transform m_ShootStartPoint;
-/**/ 
+    /**/
 
     // HashId to manage the animation (faster than sting based approach)
-	protected readonly int m_HashSpeedPara = Animator.StringToHash("maxSpeed_h");
-/*NEW*/
+    protected readonly int m_HashSpeedPara = Animator.StringToHash("maxSpeed_h");
+    /*NEW*/
     protected readonly int m_HashVerticalSpeedPara = Animator.StringToHash("maxSpeed_v");
     protected readonly int m_HashGroundedPara = Animator.StringToHash("grounded");
     protected readonly int m_HashArmsPara = Animator.StringToHash("arms");
@@ -58,41 +58,41 @@ public class PlayerControlerModifScene9 : MonoBehaviour
 
     // Postprocessing for scene 9
 
-    private bool postprocessing = false;
-    public PostProcessVolume PostProcess;
+    private bool cameraEffect = false;
+    public PostProcessing colorGrading;
 
 
     /**/
 
     // ---------------------------------
 
-    private void Awake ()
-	{
+    private void Awake()
+    {
         // get the component that will be used at each Update/FixedUpdate
-		m_Animator = GetComponent<Animator> ();
-		m_Rigidbody = GetComponent<Rigidbody2D> ();
-/*NEW*/
+        m_Animator = GetComponent<Animator>();
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+        /*NEW*/
         m_Capsule = GetComponent<CapsuleCollider2D>();
 
 
         // define behavior for raycasting
-//        m_ContactFilter.layerMask = groundLayers;
+        //        m_ContactFilter.layerMask = groundLayers;
         m_ContactFilter.layerMask = LayerMask.GetMask("Ground");
         m_ContactFilter.useLayerMask = true;
         m_ContactFilter.useTriggers = false;
         Physics2D.queriesStartInColliders = false; // do not take into account collider within which we are starting the raycast
                                                    /**/
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        
-	}
-    	
-	// Update is called once per frame
-	void Update ()
-	{
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         /*NEW*/
 
         //Postprocessing related
-        PostProcess.weight = 0f;
+        colorGrading.weight = 0f;
 
         if (!jump)
         {
@@ -101,16 +101,16 @@ public class PlayerControlerModifScene9 : MonoBehaviour
         }
 
         if (has_jetpack && arms)
-            //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
+        //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
         {
             if (!jetpackON)
-                //si jetpack eteint on regarde si le joueur l'utilise
+            //si jetpack eteint on regarde si le joueur l'utilise
             {
                 jetpackON = Input.GetButtonDown("Jetpack");
-                airControl = jetpackON; //on autorise le d�placement en l'air seulement si jetpack allume
+                airControl = jetpackON; //on autorise le déplacement en l'air seulement si jetpack allume
             }
             else
-                //sinon (il est allume) on regarde si le robot est trop pres du sol
+            //sinon (il est allume) on regarde si le robot est trop pres du sol
             {
                 CheckIfToCloseToGround();
                 if (jetpackToCloseToGround && (m_Rigidbody.velocity.y < 0))
@@ -123,7 +123,7 @@ public class PlayerControlerModifScene9 : MonoBehaviour
 
         if (has_lens)
         {
-            PostProcess.weight = 1f;
+            colorGrading.weight = 1f;
         }
 
 
@@ -131,14 +131,14 @@ public class PlayerControlerModifScene9 : MonoBehaviour
         {
             arms = Input.GetButtonDown("Arms");
         }
-/**/
-	}
+        /**/
+    }
 
     // Fixed Update emulate constant time steps for physic engine
     // Everything that is related to RigidBody velocity should be performed in this method
-	private void FixedUpdate ()
-	{
-/*NEW*/
+    private void FixedUpdate()
+    {
+        /*NEW*/
         // read continous inputs to obtain smooth motions
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -161,14 +161,14 @@ public class PlayerControlerModifScene9 : MonoBehaviour
         // that is parametrized by the vertical speed (see blend tree in Player Animator)
         m_Animator.SetFloat(m_HashVerticalSpeedPara, m_Rigidbody.velocity.y);
 
-/**/
-	}
+        /**/
+    }
 
-    /*************************/ 
+    /*************************/
     /* Managment of movement */
-    /*************************/ 
+    /*************************/
 
-/*NEW*/
+    /*NEW*/
     public void Move(float move_h, float move_v, bool jump)
     {
         if (m_grounded || airControl)
@@ -215,7 +215,7 @@ public class PlayerControlerModifScene9 : MonoBehaviour
         int count = Physics2D.Raycast(raycastStart, raycastDirection, m_ContactFilter, m_HitBuffer, raycastDistance);
 
         // We can check the ray that will be sent in the scene for debugging
-        Debug.DrawRay (raycastStart, raycastDirection*raycastDistance); // * raycastDistance
+        Debug.DrawRay(raycastStart, raycastDirection * raycastDistance); // * raycastDistance
 
         m_grounded = (count > 0);
         //m_HitBuffer[0] contains informations on the closest collider
@@ -254,22 +254,22 @@ public class PlayerControlerModifScene9 : MonoBehaviour
             m_HitBuffer[i] = new RaycastHit2D();
         }
     }
-    
+
 
 
 
     /**/
 
 
-    private void Flip ()
-	{
-		facingRight = !facingRight;
+    private void Flip()
+    {
+        facingRight = !facingRight;
 
         // use negative scaling to reverse the sprite when the player is facing left
-		Vector3 s = transform.localScale;
-		s.x *= -1;        
-		transform.localScale = s;
-	}
+        Vector3 s = transform.localScale;
+        s.x *= -1;
+        transform.localScale = s;
+    }
 
 
 
