@@ -20,7 +20,7 @@ public class CameraScript : MonoBehaviour
     {
         Camera.main.fieldOfView = 60.0f;
         player = GameObject.Find("Player");
-        end = GameObject.Find("EndOfScene");
+        end = GameObject.Find("SceneEnd");
  
         //L'offset permet d'avoir la caméra bien placée ar rapport au joueur, peu importe comment elle a été mise sur la scène
         offset = new Vector3(0, 2, -10);
