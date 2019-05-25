@@ -262,6 +262,14 @@ public class PlayerControler : MonoBehaviour
 		transform.localScale = s;
 	}
 
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.gameObject.name);
+        if (col.gameObject.name.ToString() == "box_destructible")
+        {
+            arms = true;
+            Debug.Log("boite touchée");
+        }
+    }
 
 }
