@@ -42,6 +42,8 @@ public class CameraScript : MonoBehaviour
         if (player.transform.position[0] < end.transform.position[0] - horizontalValue)
         {
             transform.position = player.transform.position + offset;
+        } else {
+            transform.position = new Vector3(transform.position[0], player.transform.position[1], 0) + offset;
         }
 
     }

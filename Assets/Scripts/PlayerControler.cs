@@ -270,6 +270,12 @@ public class PlayerControler : MonoBehaviour
             arms = true;
             Debug.Log("boite touchée");
         }
+
+        if (col.gameObject.name.ToString() == "top-secret")
+        {
+            has_jetpack = true;
+            Debug.Log("boite touchée");
+        }
     }
 
 }
