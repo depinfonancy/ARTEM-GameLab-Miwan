@@ -86,7 +86,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         has_jetpack = true;
-        if (sceneName == "1" || sceneName =="2+3" || sceneName=="4" || sceneName=="6" || sceneName == "7" || sceneName == "8" ||
+        if (sceneName == "1" || sceneName =="2+3" || sceneName=="4+5+6" || sceneName == "7" || sceneName == "8" ||
             sceneName=="9" || sceneName == "10")
         {
             has_jetpack = false;
