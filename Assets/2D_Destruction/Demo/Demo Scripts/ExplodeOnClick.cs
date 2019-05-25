@@ -16,7 +16,7 @@ public class ExplodeOnClick : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (m_Rigidbody.velocity[0] > 0.1) { 
+        if (m_Rigidbody.velocity[0] > 5) { 
         _explodable.explode();
         //ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
         //ef.doExplosion(transform.position);
