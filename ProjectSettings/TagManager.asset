@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - ExplosionFX
-  - ground
-  - Obstacle
-  - Bullet
-  - HealthBar
-  - BombPickup
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -20,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - Postprocessing
+  - 
+  - 
   - 
   - 
   - 
@@ -45,15 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2594755935
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Middleground
-    uniqueID: 2361886151
-    locked: 0
-  - name: Foreground
-    uniqueID: 286667895
     locked: 0
