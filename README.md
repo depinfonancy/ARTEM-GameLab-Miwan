@@ -1,4 +1,4 @@
-à faire : 
+﻿à faire : 
  - Rampes avec prise de vitesse (voir unity effector pour créer champ de force) camille
  - Plateformes (tapis roulants + 'ascenseurs', voir effector aussi) (j'ai commencé à regarder les effectors donc veut bien le faire plus tard si besoin - camille)
  - élements de décor à casser (caisses en bois, placard, etc) guillaume
@@ -21,7 +21,7 @@
   - Noémie : lentille et vision infrarouge
   - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force) grosso modo fait, élements de décor à casser (caisses en bois, placard, etc) 
   - Guillaume : décors et faire évoluer le robot dedans / caméras
-  - Anas : 
+  - Anas : Menu + music + build
 
 
 Notes _ Léo :

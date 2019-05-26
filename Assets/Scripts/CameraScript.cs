@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CameraScript : MonoBehaviour
     private Vector3 offset;         
 
     private Vector3 vertOffset;
+    Scene m_Scene;
 
     float horizontalDegree;
     float horizontalValue;
@@ -30,7 +32,7 @@ public class CameraScript : MonoBehaviour
         //pythagore. Le 2 s'est transformé en 2.8 par tatonnement, parce que ça marchait pas.
 
         Debug.Log(horizontalValue);
-        
+        m_Scene = SceneManager.GetActiveScene();
 
     }
 
@@ -39,7 +41,8 @@ public class CameraScript : MonoBehaviour
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
         //transform.position = player.transform.position + offset + vertOffset;
-        if (player.transform.position[0] < end.transform.position[0] - horizontalValue)
+        Debug.Log(m_Scene.name);
+        if (player.transform.position[0] < end.transform.position[0] - horizontalValue || m_Scene.name == "4")
         {
             transform.position = player.transform.position + offset;
         } else {

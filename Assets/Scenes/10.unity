@@ -721,6 +721,78 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &84722245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2882218321229011063, guid: 0877e38995b1b174cbca240882dd5422,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100400607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &84722246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84722245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 84722251}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!4 &84722251 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8778601623329531786, guid: 0877e38995b1b174cbca240882dd5422,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100400607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &98500226
 Mesh:
   m_ObjectHideFlags: 0
@@ -10730,6 +10802,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 976967508118743779, guid: 0877e38995b1b174cbca240882dd5422,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0877e38995b1b174cbca240882dd5422, type: 3}
 --- !u!1 &1126391395
@@ -16472,6 +16549,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 212627500321212548, guid: 5d147b9f1061949498c933aefc2cc1fe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cfda434d8d601604e84902185f5b5330,
+        type: 3}
+    - target: {fileID: 212627500321212548, guid: 5d147b9f1061949498c933aefc2cc1fe,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212627500321212548, guid: 5d147b9f1061949498c933aefc2cc1fe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f73d61d149c81340bea1c1d90b7d1f3, type: 2}
     - target: {fileID: 70074751925758548, guid: 5d147b9f1061949498c933aefc2cc1fe,
         type: 3}
       propertyPath: m_Size.x
@@ -16492,22 +16585,6 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.4172878
       objectReference: {fileID: 0}
-    - target: {fileID: 212627500321212548, guid: 5d147b9f1061949498c933aefc2cc1fe,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cfda434d8d601604e84902185f5b5330,
-        type: 3}
-    - target: {fileID: 212627500321212548, guid: 5d147b9f1061949498c933aefc2cc1fe,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212627500321212548, guid: 5d147b9f1061949498c933aefc2cc1fe,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5f73d61d149c81340bea1c1d90b7d1f3, type: 2}
     - target: {fileID: 1706678240199890, guid: 5d147b9f1061949498c933aefc2cc1fe, type: 3}
       propertyPath: m_IsActive
       value: 1
