@@ -20,7 +20,7 @@ public class PlatformAttach : MonoBehaviour
     {
         if(playerObject.transform.position.y > 19)
         {
-            Vector3 tmp = new Vector3(0.2f, 0,0);
+            Vector3 tmp = new Vector3(0.2f, 0, 0);
             rb.transform.position += tmp;
             
         }
