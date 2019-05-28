@@ -1,6 +1,7 @@
 ﻿
  
  Mise à jour post présentation : reste à faire
+  - nouvelle idée: Miwan parle comme R2D2 et sur le chemin, il trouve un traducteur -> des sous-titres s'affichent alors dès qu'il parle
   - taille objets pour le level design
   - rendre les elements faciles à réutiliser pour la suite
   - adapter le level design pour que le joueur ait vrmt à chercher les éléments et moins juste à avancer et rentrer dedans
