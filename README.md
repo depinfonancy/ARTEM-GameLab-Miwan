@@ -1,6 +1,34 @@
-﻿à faire : 
+﻿
+ 
+ Mise à jour post présentation : reste à faire
+  - taille objets pour le level design
+  - rendre les elements faciles à réutiliser pour la suite
+  - adapter le level design pour que le joueur ait vrmt à chercher les éléments et moins juste à avancer et rentrer dedans
+  - ajouter des salles pour le storytelling : libération robots, salles de test...
+  - ajouter plus d'éléments à éviter ou à casser pour passer (plateformes, sol à casser en venant du haut)
+  - ajouter des ennemis?
+  - améliorer les élements à casser: visuel, garder collision?
+  - Animer casier/lentille scène 7
+  - Animer porte et bande à couper scène 8
+  - animer je sais plus quoi scène 9
+  - activer la vision nocturne après collision en scène 10
+  - rendre les plateformes mouvantes en 11+12+13
+  - ajuster les réglages de la caméra sur les scènes de la fin
+  - rendre possible le changement de scène vers la gauche
+  - ....
+
+
+Nouvelles tâches :
+  - Léo : rétablir scène 10, rétablir bug animations
+  - Kou : 
+  - Noémie : activer vision nocture après collision
+  - Camille : changement scène vers gauche
+  - Guillaume : 
+  - Anas : 
+
+
+Déjà fait:
  - Rampes avec prise de vitesse (voir unity effector pour créer champ de force) camille
- - Plateformes (tapis roulants + 'ascenseurs', voir effector aussi) (j'ai commencé à regarder les effectors donc veut bien le faire plus tard si besoin - camille)
  - élements de décor à casser (caisses en bois, placard, etc) guillaume
  - miwan sans bras 
  - grimper à la corde
@@ -9,26 +37,10 @@
  - lentille et vision infrarouge (avec shader)
  - jetpack : est ce qu'il a une durée d'utilisation limitée ?
  - musiques et bruitages 
-<<<<<<< HEAD
- - assemblage des décors (en reprenant la numérotation du drive): 1-2-3-4 fait 7-8-9 en cours (Camille)
-
-=======
- 
->>>>>>> test_animator
- Tâches :
-  - Léo : mouvements de Miwan : rouler, jetpack, couper, etc 
-  - Kou : menu
-  - Noémie : lentille et vision infrarouge
-  - Camille : Rampes avec prise de vitesse (voir unity effector pour créer champ de force) grosso modo fait, élements de décor à casser (caisses en bois, placard, etc) 
-  - Guillaume : décors et faire évoluer le robot dedans / caméras
-  - Anas : Menu + music + build
+ - assemblage des décors (en reprenant la numérotation du drive): 1-2-3-4  7-8-9 11-12-13-14-15 ok (Camille)
 
 
 Notes _ Léo :
- - il ne faut pas inverser l'image quand on passe de droite à gauche car image non symétrique
- - pour l'instant on peut tout le temps avoir le jetpack, à changer
- - animations manquantes : jetpack éteint, iddle avec et sans bras
- - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
  - attention au Collider qui se décale entre les différentes animations
 
 <<<<<<< HEAD
@@ -38,8 +50,4 @@ Notes Noémie:
  Dans un second temps: on récupère une lentille et à ce moment là, une touche apparait (pour montrer comment l'activer). Pénétrer dans la scène concernée qui est dans le noir puis activer la lentille. 
  
 =======
-Touches de déplacement :
-- direction avec les fleches
-- sortir les bras avec "a" (on ne peut plus les ranger)
-- avec les bras sortis, on peut utiliser le jetpack avec la barre d'espace (on ne peut plus le ranger)
->>>>>>> test_animator
+
