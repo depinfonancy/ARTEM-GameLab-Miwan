@@ -41,6 +41,10 @@ Déjà fait:
 
 
 Notes _ Léo :
+ - il ne faut pas inverser l'image quand on passe de droite à gauche car image non symétrique
+ - pour l'instant on peut tout le temps avoir le jetpack, à changer
+ - animations manquantes : jetpack éteint, iddle avec et sans bras
+ - problème de gestion du jetpack : comment faire pour revenir à l'état sans jetpack ?
  - attention au Collider qui se décale entre les différentes animations
 
 <<<<<<< HEAD
@@ -50,4 +54,8 @@ Notes Noémie:
  Dans un second temps: on récupère une lentille et à ce moment là, une touche apparait (pour montrer comment l'activer). Pénétrer dans la scène concernée qui est dans le noir puis activer la lentille. 
  
 =======
-
+Touches de déplacement :
+- direction avec les fleches
+- sortir les bras avec "a" (on ne peut plus les ranger)
+- avec les bras sortis, on peut utiliser le jetpack avec la barre d'espace (on ne peut plus le ranger)
+>>>>>>> test_animator

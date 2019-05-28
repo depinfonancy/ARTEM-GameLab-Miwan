@@ -77,7 +77,7 @@ public class PlayerControler : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
 
-        //load scene parameter
+        //load scene parameters
         string sceneName = currentScene.name;
         arms = true;
         if (sceneName == "1" || sceneName == "2+3")
