@@ -19,7 +19,7 @@
 
 
 Nouvelles tâches :
-  - Léo : 
+  - Léo : rétablir scène 10, rétablir bug animations
   - Kou : 
   - Noémie : activer vision nocture après collision
   - Camille : changement scène vers gauche
