@@ -9,8 +9,6 @@ public class JetpackScript : MonoBehaviour
     public GameObject playerObject;
     private Rigidbody2D p_rigidbody;
 
-    public GameObject message;
-
 
     void Start()
     {
