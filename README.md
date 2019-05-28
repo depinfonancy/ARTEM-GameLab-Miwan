@@ -15,7 +15,7 @@ Nouvelles tâches :
   - Léo : 
   - Kou : 
   - Noémie : activer vision nocture après collision
-  - Camille : mouvement caméra vers gauche
+  - Camille : changement scène vers gauche
   - Guillaume : 
   - Anas : 
 
