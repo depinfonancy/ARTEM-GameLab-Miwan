@@ -1,6 +1,13 @@
 ﻿
  
  Mise à jour post présentation : reste à faire
+  - taille objets pour le level design
+  - rendre les elements faciles à réutiliser pour la suite
+  - adapter le level design pour que le joueur ait vrmt à chercher les éléments et moins juste à avancer et rentrer dedans
+  - ajouter des salles pour le storytelling : libération robots, salles de test...
+  - ajouter plus d'éléments à éviter ou à casser pour passer (plateformes, sol à casser en venant du haut)
+  - ajouter des ennemis?
+  - améliorer les élements à casser: visuel, garder collision?
   - Animer casier/lentille scène 7
   - Animer porte et bande à couper scène 8
   - animer je sais plus quoi scène 9
