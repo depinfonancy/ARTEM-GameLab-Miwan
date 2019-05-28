@@ -262,6 +262,7 @@ public class PlayerControler : MonoBehaviour
 		transform.localScale = s;
 	}
 
+    /*
     void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.gameObject.name);
@@ -277,5 +278,6 @@ public class PlayerControler : MonoBehaviour
             Debug.Log("boite touchée");
         }
     }
+    */
 
 }
