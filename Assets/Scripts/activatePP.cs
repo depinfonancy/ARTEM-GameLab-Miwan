@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class activatePP : MonoBehaviour
 {
@@ -12,13 +13,17 @@ public class activatePP : MonoBehaviour
     public GameObject effect;
     public GameObject light;
 
+    public GameObject UIObject;
 
-    private bool hasLens = false;
+    private bool has_lens = false;
+
     public bool lightoff = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        UIObject.SetActive(true);
+
         effect = GameObject.Find("Postprocessing");
         postProcess = effect.GetComponent<PostProcessVolume>();
         postProcess.weight = 0f;
@@ -29,28 +34,37 @@ public class activatePP : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D coll)
+    /*public void OnCollisionEnter2D(Collision2D coll)
 
     // enable the player to climb when there is a collision between rope and player
     {
-        playerObject = GameObject.Find("Player");
+        
         //light = GameObject.Find("Spot Light");
 
-        if (coll.gameObject == playerObject)
+        if (has_lens)
         {
-            hasLens = true;
+            
+        }
+
+    }*/
+
+    // Update is called once per frame
+    void Update()
+    {
+        playerObject = GameObject.Find("Player");
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            has_lens = true;
+            print("L key was pressed");
+            UIObject.SetActive(false);
+            
+
             Debug.Log("camera effect on");
             postProcess.weight = 1f;
 
             light.SetActive(true);
             lightoff = false;
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 }
