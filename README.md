@@ -54,4 +54,7 @@ Notes Noémie:
 
 Branche testsPostProcessingScene10: 
 - le post processing s'active quand Miwan tape dans la boîte -> j'aurais aimé avoir une scène initialement totalement noire puis que le PP s'active quand Miwan met sa lentille mais le joueur risque d'être perdu : afficher un message "olala je suis dans le noire, je ne vois rien" 
+Solution: changer la couleur de la lumière ambiante dans Window->Rendering->Lighting Settings
+
+Ajouter la lentille dans le script du player -> la vision nocturne s'active quand le player met sa lentille
 
