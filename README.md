@@ -25,7 +25,7 @@ Nouvelles tâches :
   - Noémie : activer vision nocture après collision
   - Camille : changement scène vers gauche
   - Guillaume : 
-  - Anas : 
+  - Anas : Animations arrière-plan 7
 
 
 Déjà fait:
