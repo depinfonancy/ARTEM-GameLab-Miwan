@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -20,9 +22,13 @@ public class PlayerControler : MonoBehaviour
     //defined in Awake procedure
     public bool arms;
     public bool has_jetpack;
+    public bool has_lens=true;
+
     //default
     private bool jetpackON = false;
     private bool jetpackToCloseToGround = true;
+
+    private bool lensON = false;
 
 
 
@@ -52,8 +58,17 @@ public class PlayerControler : MonoBehaviour
     ContactFilter2D m_ContactFilter;
     RaycastHit2D[] m_HitBuffer = new RaycastHit2D[5];
 
-    
-/**/
+    // camera effect in scene 10 with lens
+    private bool postprocessing = false;
+
+    public PostProcessVolume postProcess;
+    public GameObject effect;
+    public GameObject light;
+    public GameObject UIObject;
+    public bool lightoff = true;
+
+
+    /**/
 
     // ---------------------------------
 
@@ -92,6 +107,19 @@ public class PlayerControler : MonoBehaviour
             has_jetpack = false;
         }
 
+        if (sceneName == "10")
+            has_jetpack = false;
+            UIObject = GameObject.Find("Canvas");
+            UIObject.SetActive(true);
+
+            effect = GameObject.Find("Postprocessing");
+            postProcess = effect.GetComponent<PostProcessVolume>();
+            postProcess.weight = 0f;
+
+            light = GameObject.Find("Spot Light");
+            light.SetActive(false);
+
+
 
 
     }
@@ -100,16 +128,17 @@ public class PlayerControler : MonoBehaviour
 	void Update ()
 	{
         if (has_jetpack && arms)
-            //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
+        //utilisation du jetpack conditionnee par le fait d'avoir des bras et un jetpack
         {
             if (!jetpackON)
-                //si jetpack eteint on regarde si le joueur l'utilise
+            //si jetpack eteint on regarde si le joueur l'utilise
+
             {
                 jetpackON = Input.GetButtonDown("Jetpack");
                 airControl = jetpackON; //on autorise le déplacement en l'air seulement si jetpack allume
             }
             else
-                //sinon (il est allume) on regarde si le robot est trop pres du sol
+            //sinon (il est allume) on regarde si le robot est trop pres du sol
             {
                 CheckIfToCloseToGround();
                 if (jetpackToCloseToGround && (m_Rigidbody.velocity.y < 0))
@@ -119,6 +148,27 @@ public class PlayerControler : MonoBehaviour
                 }
             }
         }
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "10" && has_lens && Input.GetKeyDown(KeyCode.L))
+        {
+            lensON = true;
+            Debug.Log ("L key was pressed");
+            UIObject.SetActive(false);
+
+                
+             
+            Debug.Log("camera effect on");
+            postProcess.weight = 1f;
+
+                
+            light.SetActive(true);
+            lightoff = false;
+           
+         }
+       
 
 
         if (!arms)

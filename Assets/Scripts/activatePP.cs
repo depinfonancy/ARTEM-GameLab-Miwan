@@ -15,21 +15,21 @@ public class activatePP : MonoBehaviour
 
     public GameObject UIObject;
 
-    private bool has_lens = false;
+    //private bool has_lens = false;
 
     public bool lightoff = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        UIObject.SetActive(true);
+        /*UIObject.SetActive(true);
 
         effect = GameObject.Find("Postprocessing");
         postProcess = effect.GetComponent<PostProcessVolume>();
         postProcess.weight = 0f;
 
         light = GameObject.Find("Spot Light");
-        light.SetActive(false);
+        light.SetActive(false);*/
 
     }
 
@@ -51,7 +51,7 @@ public class activatePP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerObject = GameObject.Find("Player");
+        /*playerObject = GameObject.Find("Player");
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -65,6 +65,6 @@ public class activatePP : MonoBehaviour
 
             light.SetActive(true);
             lightoff = false;
-        }
+        }*/
     }
 }
