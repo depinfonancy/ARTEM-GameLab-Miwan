@@ -19,30 +19,11 @@
   - ....
 
 
-Déjà fait:
- - Rampes avec prise de vitesse (voir unity effector pour créer champ de force) camille
- - élements de décor à casser (caisses en bois, placard, etc) guillaume
- - miwan sans bras 
- - grimper à la corde
- - menu (accueil, pause) kou
- - commencer à regarder les scripts 
- - lentille et vision infrarouge (avec shader)
- - jetpack : est ce qu'il a une durée d'utilisation limitée ?
- - musiques et bruitages 
- - assemblage des décors (en reprenant la numérotation du drive): 1-2-3-4  7-8-9 11-12-13-14-15 ok (Camille)
-
 Tâches effectuées :
- - Camille : Effectors, scènes 1-7 et 12-15, changement de scène
+ - Camille : Effectors, scènes 1-7 et 12-15, changement de scène, aide pour éléments à casser, remodelage/assemblage des scènes
  - Noémie : Scenes 10 à 13, vision nocturne (post-processing), lentille, correction bug en 'live' le jour de la présentation
- - Anas : gestions des boutons, menu, sons, 
- - Kou : menus de pause, de départ, éclairage
+ - Anas : gestions des boutons, menu, sons, cohérence des scènes, build Android, éclairage scènes début
+ - Kou : menus de pause, menu de départ, sons du jeu, paramètres de jeu
  - Guillaume : éléments de décors à casser (caisse, placard, ...), script caméra, ajustements dernière minute pour avoir un jeu uniforme et jouable
  - Léo : Intégration des animations, création de l'Animator pour Miwan, scripts PlayerController, Jetpack, Arms pour que Miwan soit affiché comme il faut en fonction de son avancement dans le jeu, affichage de messages d'explications
-
-
-<<<<<<< HEAD
-Notes Noémie: 
- - https://docs.unity3d.com/Packages/com.unity.postprocessing@2.1/manual/Quick-start.html (pack postprocessing) 
- Dans un premier temps: on arrive dans la scène et la vision nocturne est activée
- Dans un second temps: on récupère une lentille et à ce moment là, une touche apparait (pour montrer comment l'activer). Pénétrer dans la scène concernée qui est dans le noir puis activer la lentille. 
 
