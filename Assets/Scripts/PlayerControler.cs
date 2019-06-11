@@ -160,8 +160,10 @@ public class PlayerControler : MonoBehaviour
     /* Managment of movement */
     /*************************/ 
 
-/*NEW*/
     public void Move(float move_h, float move_v)
+        /* Gerer les deplacements horizontaux et verticaux, lorsque Miwan est au sol ou avec un jetpack
+         * les mouvements verticaux lorsqu'il y a une corde sont geres dans le RopeScript
+         * */
     {
         if (m_grounded || airControl)
         {
