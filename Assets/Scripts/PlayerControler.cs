@@ -92,7 +92,7 @@ public class PlayerControler : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
 
-        //load scene parameter
+        //load scene parameters
         string sceneName = currentScene.name;
         arms = true;
         if (sceneName == "1" || sceneName == "2+3")
@@ -210,8 +210,10 @@ public class PlayerControler : MonoBehaviour
     /* Managment of movement */
     /*************************/ 
 
-/*NEW*/
     public void Move(float move_h, float move_v)
+        /* Gerer les deplacements horizontaux et verticaux, lorsque Miwan est au sol ou avec un jetpack
+         * les mouvements verticaux lorsqu'il y a une corde sont geres dans le RopeScript
+         * */
     {
         if (m_grounded || airControl)
         {
@@ -312,6 +314,7 @@ public class PlayerControler : MonoBehaviour
 		transform.localScale = s;
 	}
 
+    /*
     void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.gameObject.name);
@@ -327,5 +330,6 @@ public class PlayerControler : MonoBehaviour
             Debug.Log("boite touchée");
         }
     }
+    */
 
 }
